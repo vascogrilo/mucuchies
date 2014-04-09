@@ -1,6 +1,8 @@
 {{#if content}}
-  <h1>{{date}}</h1>
-  <h2>{{time}}</h2>
+  <h1><b>{{content.date}}</b></h1>
+  <h1>{{content.utc}}</h1>
+  <h2>{{content.local}}</h2>
+  <h1>{{content.cet}}</h1>
 {{/if}}
 <i class="icon-time icon-background"></i>
 {{view Dashboard.LastUpdatedView}}

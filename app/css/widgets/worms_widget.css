@@ -1,0 +1,59 @@
+.widget-worms {
+  background-color: #CC8928;
+  background-image: url('../assets/worm.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.widget-worms h2 {
+	font-size: 24px;
+	text-transform: none;
+	font-weight: bold;
+}
+
+.widget-worms table {
+	width: 330px;
+	margin: 50px auto;
+	font-size: 13pt;
+	border-spacing: 3px;
+    border-collapse: separate;
+}
+
+.widget-worms td {
+	color: #EFEFEF;
+	padding: 0px 2px;
+}
+
+.widget-worms th {
+	font-size: 14pt;
+	padding: 0px 2px;
+}
+
+.widget-worms td,
+.widget-worms th {
+	text-align: center;
+}
+
+.widget-worms td.left,
+.widget-worms th.left {
+	text-align: left;
+}
+
+.widget-worms td.small,
+.widget-worms th.small {
+	font-size: 9pt;
+}
+
+.widget-worms .value {
+  color: white;
+}
+
+.widget-worms .change-rate {
+  font-weight: 500;
+  font-size: 30px;
+  color: white;
+}
+
+.widget-worms .more-info {
+  color: rgba(255, 255, 255, 0.7);
+}

@@ -1,10 +1,10 @@
 .widget-embed {
-  background-color: #4b4b4b;
+  background-color: #8DBA73;
 }
 
 .widget-embed iframe {
-  width: 100%;
-  height: 281px;
+  width: 620px;
+  height: 350px;
 }
 
 .widget-embed.full-screen iframe {

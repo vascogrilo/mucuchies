@@ -1,0 +1,64 @@
+.widget-sysorb {
+  background-color: #DDD;
+  /*background-image: url('../assets/worm.png');
+  background-repeat: no-repeat;
+  background-position: center;*/
+}
+
+.widget-sysorb iframe {
+	border: solid 10px #FFF;
+	height: 85%;
+}
+
+.widget-sysorb h2 {
+	font-size: 24px;
+	text-transform: none;
+	font-weight: bold;
+}
+
+.widget-sysorb table {
+	width: 330px;
+	margin: 50px auto;
+	font-size: 13pt;
+	border-spacing: 3px;
+    border-collapse: separate;
+}
+
+.widget-sysorb td {
+	color: #EFEFEF;
+	padding: 0px 2px;
+}
+
+.widget-sysorb th {
+	font-size: 14pt;
+	padding: 0px 2px;
+}
+
+.widget-sysorb td,
+.widget-sysorb th {
+	text-align: center;
+}
+
+.widget-sysorb td.left,
+.widget-sysorb th.left {
+	text-align: left;
+}
+
+.widget-sysorb td.small,
+.widget-sysorb th.small {
+	font-size: 9pt;
+}
+
+.widget-sysorb .value {
+  color: white;
+}
+
+.widget-sysorb .change-rate {
+  font-weight: 500;
+  font-size: 30px;
+  color: white;
+}
+
+.widget-sysorb .more-info {
+  color: rgba(255, 255, 255, 0.7);
+}
