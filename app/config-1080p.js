@@ -128,7 +128,7 @@ DashboardConfig = {
                   randomMessages = [
                     "Zé, stop watching LoL.",
                     "Vasco, do you hate computers?",
-                    "Tiago, is the new UI ready?",
+                    "Tiago, is the new UI ready? - Next week",
                     "Hugo, when was your last commit?",
                     "Work, bitches!",
                     "Sucks to be you right now.",
