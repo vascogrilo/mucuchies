@@ -7,7 +7,7 @@ DashboardConfig = {
 
   grid: {
     width: 1920,
-    height: 950,
+    height: 1080,
 
     sources: {
       meterSource: {
