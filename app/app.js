@@ -84,9 +84,6 @@ require('app/models/widgets/sysorb_widget');
     "links": {}
 });
 
-//require('moment-timezone');
-
-
 require('app/models/sources/source');
 require('app/models/sources/periodic_source');
 require('app/models/sources/last_fm_source');
@@ -97,6 +94,9 @@ require('app/models/sources/bitstamp_source');
 require('app/models/sources/jenkins_source');
 require('app/models/sources/time_source');
 require('app/models/sources/rss_source');
+
+// SEMASIO EXCLUSIVE SOURCES
+require('app/models/sources/meter_source');
 
 require('app/views/gridster_view');
 require('app/views/last_updated_view');
