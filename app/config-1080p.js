@@ -29,25 +29,35 @@ DashboardConfig = {
                 var teams = rawFile.responseText.split('\n');
                 for(var i = 0; i < teams.length; i++) {
                   var stats = teams[i].split(',');
-                  var newTeamObj = {
-                    team: stats[0],
-                    losses: stats[1],
-                    wins: stats[3],
-                    draws: stats[5],
-                    kills: stats[7],
-                    deaths: stats[9]
-                  };
-                  dataObj.scores.push(newTeamObj);
+                  if(stats[0].length > 0) {
+                    var newTeamObj = {
+                      team: stats[0],
+                      losses: parseInt(stats[1]),
+                      wins: parseInt(stats[3]),
+                      draws: parseInt(stats[5]),
+                      kills: parseInt(stats[7]),
+                      deaths: parseInt(stats[9]),
+                    };
+
+                    // ratio is the number of victories in relation to number of games played
+                    newTeamObj.ratio = ((newTeamObj.wins / (newTeamObj.wins + newTeamObj.draws + newTeamObj.losses)) * 100).toFixed(1);
+                    dataObj.scores.push(newTeamObj);
+                  }
                 }
 
-                // sort by number of victories
+                // sort by ratio, then number of victories, then number of kills
                 dataObj.scores.sort(
                   function(a,b) {
-                    if(b.wins == a.wins)
-                      return b.kills - a.kills;
-                    return b.wins - a.wins;
+                    if(b.ratio == a.ratio) {
+                      if(b.wins == a.wins)
+                        return b.kills - a.kills;
+                      return b.wins - a.wins;  
+                    }
+                    return b.ratio - a.ratio;
                   }
                 );
+
+                console.log(dataObj);
 
                 // best team is first team after sorting
                 dataObj.best = dataObj.scores[0].team;
