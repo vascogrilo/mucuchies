@@ -84,6 +84,7 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
 
         if(prob < 5) return "Almost there, weekend time!";
         if(prob < 10) return "FRIDAY IS UPON US, REJOICE!";
+        if(prob < 20) return "It's FRIDAY man, ALELUIA!";
 
         return null;
       },
@@ -112,12 +113,14 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
           ];
         } else if(h < 10) {
           randomMessages = [
-            "YAMN!",
+            "YAMN...",
             "The early bird gets the worm.",
             "Let me just wash my face...",
             "WERE\'S MY COFFEE!",
             "Ready to work?",
-            "GO! GO! GO!"
+            "GO! GO! GO!",
+            "Mornig blues",
+            "First come, first serve!"
           ];
         } else if((h < 13 || (h >= 14 && h <= 17)) && prob < 40) {
           // work hour - 40% chance of personal messages
@@ -128,7 +131,8 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "Hugo, when was your last commit?",
             "Work, bitches!",
             "Sucks to be you right now.",
-            "You should see your faces reading this."
+            "You should see your faces reading this.",
+            "Vasco, Cristina & Rui are getting a divorce..."
           ];
         } else if((h < 13 || (h >= 14 && h <= 17)) && prob < 80) {
           // work hours - 40% chance of a programming joke!
@@ -151,7 +155,10 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "I came, I saw, I deleted all your files.",
             "Warning, keyboard not found. Press Enter to continue.",
             "A SQL query walks up to two tables and asks, \"Can I join you?\"",
-            "NOT ARBITRARILY COMPLEX ENOUGH!"
+            "NOT ARBITRARILY COMPLEX ENOUGH!",
+            "YABADADO...WHILE",
+            "Welcome to the dark site of the internet",
+            "Howto be hated in the interner: 1. Express an opinion. 2. Wait."
           ];
         } else if(h >= 18) {
           randomMessages = [
@@ -163,7 +170,11 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
         } else if(h >= 19) {
             randomMessages = ["Playing games at work, are we?"];
         } else if(h >= 20) {
-            randomMessages = ["Go home. Seriously."];
+            randomMessages = [
+            "Go home. Seriously.", 
+            "Aren't you homesick?", 
+            "IT GO HOME!"
+          ];
         } else {
           randomMessages = [
             "That's what SHE said!",
@@ -186,7 +197,17 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "I’d kill for a Nobel Peace Prize.",
             "I bet you I could stop gambling.",
             "Sex on TV can’t hurt unless you fall off.",
-            "ARE YOU NOT ENTERTAINED??"
+            "ARE YOU NOT ENTERTAINED??",
+            "HAL2000 On-line",
+            "What are you doing Dave?",
+            "GLADos On-line",
+            "The cake is a lie",
+            "You must be the pride of ${UIPHOMETOWN}",
+            "Skynet On-line",
+            "This message will be back!",
+            "Wait for it...",
+            "APPalitius!!!",
+            "RANDawsome!!!"
           ];
         } 
 
