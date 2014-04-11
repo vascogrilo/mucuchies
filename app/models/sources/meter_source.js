@@ -132,7 +132,8 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "Work, bitches!",
             "Sucks to be you right now.",
             "You should see your faces reading this.",
-            "Vasco, Cristina & Rui are getting a divorce..."
+            "Vasco, Cristina & Rui are getting a divorce...",
+            "Tiago: oh cod!"
           ];
         } else if((h < 13 || (h >= 14 && h <= 17)) && prob < 80) {
           // work hours - 40% chance of a programming joke!
@@ -158,7 +159,30 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "NOT ARBITRARILY COMPLEX ENOUGH!",
             "YABADADO...WHILE",
             "Welcome to the dark site of the internet",
-            "Howto be hated in the interner: 1. Express an opinion. 2. Wait."
+            "Howto be hated in the interner: 1. Express an opinion. 2. Wait.",
+            "#hashtag",
+            "WHILE(true);",
+            "FOR(;;);",
+            "In order to understand recursion you must first understand recursion.",
+            "It's finished, just need to test",
+            "Don’t fly on payday!",
+            "If you can't C# use glasses.",
+            "Hip right now: WTF Driven Development",
+            "Mouse pointless is a real condition!",
+            "Google glasses: About 99,500,000 results",
+            "All programmers are playwrights and all computers are lousy actors.",
+            "[\"hip\",\"hip\"](Hip hip array!)",
+            "Profanity is the most common language used in programming",
+            "//No comment",
+            "/* No comments */",
+            "Eight bytes walk into a bar and say to the bartender: \"Make us a double.\"",
+            "When your hammer is C++, everything begins to look like a thumb.",
+            "Yo'r just like a struct. Yo ain't got no class!",
+            "404",
+            "In a Hotel: I couldn't find my room, it's number 404.",
+            "LIKE!",
+            "In C++, friends can touch each others privates.",
+            "question = 0x2b | ~0x2b;"
           ];
         } else if(h >= 18) {
           randomMessages = [
@@ -207,7 +231,10 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "This message will be back!",
             "Wait for it...",
             "APPalitius!!!",
-            "RANDawsome!!!"
+            "RANDawsome!!!",
+            "If you can read this then you don't need glasses.",
+            "loading...",
+            "still loading..."
           ];
         } 
 
