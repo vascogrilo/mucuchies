@@ -80,7 +80,7 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
       friday: function(h, m, prob) {
 
         if(h == 13) return "Time for TEAM LUNCH!";
-        if((h >= 17 && m >= 30) || h > 18) return "Wormageddon is upon us! Time to play!";
+        if((h >= 17 && m >= 30) || h == 18)  return "Wormageddon is upon us! Time to play!";
 
         if(prob < 5) return "Almost there, weekend time!";
         if(prob < 10) return "FRIDAY IS UPON US, REJOICE!";
@@ -184,14 +184,14 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "In C++, friends can touch each others privates.",
             "question = 0x2b | ~0x2b;"
           ];
-        } else if(h >= 18) {
+        } else if(h == 18 && m >= 30) {
           randomMessages = [
             "Time to stop!",
             "Are you doing extra time today?",
             "Is ME01 crashing again?",
             "Seriously, tell Thomas you have to go!"
           ];
-        } else if(h >= 19) {
+        } else if(h == 19) {
             randomMessages = ["Playing games at work, are we?"];
         } else if(h >= 20) {
             randomMessages = [
