@@ -191,9 +191,9 @@ DashboardConfig = {
         size: [2, 1],
         widget: 'Dashboard.YoutubeWidget',
         args: {
-          embedUrl: "https://www.youtube.com/embed/LgFJJ77w2nA?" +
+          embedUrl: "https://www.youtube.com/embed/0pNNtY_iyUg?" +
             "autoplay=0&controls=0&rel=0&showinfo=0&iv_load_policy=3",
-          title: 'Instant Calabria'
+          title: 'Instant (Politically Correct) Calabria'
         }
       },
       {
