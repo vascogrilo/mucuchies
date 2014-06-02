@@ -1,5 +1,8 @@
 .widget-rss {
   background-color: #dc5945;
+  background-image: url('../assets/rss.png');
+  background-repeat: no-repeat;
+  background-position: center;
   color: rgba(255, 255, 255, 1.0);
   padding: 0 27px;
   vertical-align: top;
@@ -11,13 +14,19 @@
 }
 
 .widget-rss .title {
-  margin-top: 25px;
+  margin-top: 60px;
   margin-bottom: 30px;
 }
 
 .widget-rss .item-name {
   color: rgba(255, 255, 255, 1.0);
-  padding-top: 50px;
+  padding-top: 30px;
+  font-size: 16pt;
+  z-index: 999;
+}
+
+.widget-rss .item-name:hover {
+  text-decoration: underline;
 }
 
 .widget-rss .item-data {

@@ -41,7 +41,8 @@ DashboardConfig = {
 
                     // ratio is the number of victories in relation to number of games played
                     newTeamObj.ratio = ((newTeamObj.wins / (newTeamObj.wins + newTeamObj.draws + newTeamObj.losses)) * 100).toFixed(1);
-                    dataObj.scores.push(newTeamObj);
+                    if(newTeamObj.wins + newTeamObj.losses > 0)
+                      dataObj.scores.push(newTeamObj);
                   }
                 }
 
@@ -107,6 +108,37 @@ DashboardConfig = {
         }
       },
 
+      imgSource: {
+        className: 'Dashboard.PeriodicSource',
+        args: {
+          period: 104729,
+          last: -1,
+          imgs: [
+              "./assets/imgs/BadCode1.jpg",
+              "./assets/imgs/BadCode2.jpg",
+              "./assets/imgs/BinarySolo.png",
+              "./assets/imgs/BlackAndWhite.jpg",
+              "./assets/imgs/Byte.jpg",
+              "./assets/imgs/BugVsFeature.jpg",
+              "./assets/imgs/Coding1.jpg",
+              "./assets/imgs/MathJoke1.jpg",
+              "./assets/imgs/RubiksCode.jpg",
+              "./assets/imgs/SuperBock.jpg",
+              "./assets/imgs/Teamwork.png",
+              "./assets/imgs/WeirdMathBaby.png"
+              ],
+          dataUpdate: function(callback) {
+            var idx = -1;
+            do {
+              idx = Math.floor(Math.random() * this.imgs.length);
+            } while (idx == this.last);
+
+            this.last = idx;
+            callback(this.imgs[idx]);
+          }
+        }
+      },
+
       tasksSource: {
         className: 'Dashboard.PeriodicSource',
         args: {
@@ -166,7 +198,7 @@ DashboardConfig = {
         sourceArgs: { woeId: 746203 }
       },
       {
-        pos: [2, 2],
+        pos: [2, 3],
         widget: 'Dashboard.MeterWidget',
         source: 'Dashboard.MeterSource',
         args: { title: 'Work Meter' }
@@ -191,15 +223,22 @@ DashboardConfig = {
         size: [2, 1],
         widget: 'Dashboard.YoutubeWidget',
         args: {
-          embedUrl: "https://www.youtube.com/embed/0pNNtY_iyUg?" +
+          embedUrl: "https://www.youtube.com/embed/LgFJJ77w2nA?" +
             "autoplay=0&controls=0&rel=0&showinfo=0&iv_load_policy=3",
-          title: 'Instant (Politically Correct) Calabria'
+          title: 'Instant Calabria'
         }
       },
       {
-        pos: [2, 1],
-        widget: 'Dashboard.GraphWidget',
-        source: 'sinSource'
+        pos: [2, 5],
+        widget: 'Dashboard.RssWidget',
+        source: 'Dashboard.RssSource',
+        sourceArgs: {
+          feedUrl: 'http://rss.slashdot.org/Slashdot/slashdot'
+        },
+        args: { 
+          title: 'Tech News', 
+          rotatePeriod: '20000' 
+        }
       },
       {
         pos: [1, 1],
@@ -208,7 +247,7 @@ DashboardConfig = {
         source: 'numberSource',
         args: { 
           title: "Sysorb", 
-          embedUrl: "https://sysorb01.netgroup.dk/sysorb/index.cgi?path=1.3.4&view=1.4097428843&disabletop=yes&viewdisabletop=yes"
+          embedUrl: "https://sysorb01.netgroup.dk/sysorb/index.cgi?path=1.3.4&view=1.4097428843&tld=cust.semasio&disabletop=yes&viewdisabletop=yes"
           /*embedUrl: "https://sysorb01.netgroup.dk/sysorb/index.cgi?path=1.3.4&view=1.4097428843&passwd=&tld=cust.semasio&username=hugo&disabletop=yes&viewdisabletop=yes"*/
         }
       },
@@ -219,7 +258,7 @@ DashboardConfig = {
         args: { title: "Sprint" }
       },*/
       {
-        pos: [2, 3],
+        pos: [2, 2],
         widget: 'Dashboard.WormsWidget',
         source: 'wormsSource',
         args: {
@@ -238,12 +277,18 @@ DashboardConfig = {
       }, */
       {
         pos: [2, 4],
+        widget: 'Dashboard.ImageWidget',
+        source: 'imgSource',
+        args: { title: "Behold!" }
+      },
+      /*{
+        pos: [2, 4],
         widget: 'Dashboard.NumberWidget',
         source: 'numberSource',
         args: { title: "Useful number" }
-      },
+      },*/
       {
-        pos: [2, 5],
+        pos: [2, 1],
         widget: 'Dashboard.DogeWidget',
         source: 'dogeNumberSource',
         args: { title: "Doge number" }

@@ -2,11 +2,9 @@
   <h1 class="title">{{title}}</h1>
 {{/if}}
 
-<i class="icon-rss icon-background"></i>
-
+{{#each content}}
 <div class="item">
-{{#with content}}
-  <div class="item-name">{{title}}</div>
+  <div class="item-name"><a {{bind-attr href=link}} target="_blank" title="Click to read more...">{{title}}</a></div>
   <div class="item-data">
     <span>
       {{#if author}}
@@ -14,7 +12,11 @@
       {{/if}}
       <span class="item-date">{{publishedDate}}</span>
     </span>
+    <br/>
   </div>
-{{/with}}
 </div>
+{{/each}}
+
 {{view Dashboard.LastUpdatedView}}
+
+

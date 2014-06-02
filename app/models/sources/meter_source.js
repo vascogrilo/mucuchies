@@ -45,10 +45,7 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
       daily: function(h, m, prob) {
         if(h == 9 && m > 55) return "-PREPARE FOR STANDUP-"
         if(h == 10 && m > 0 && m < 15) return "-STAND UP TIME-";
-        if(h == 12 && m > 30 && m < 50) return "-HUGO'S WC BREAK 1-";
         if(h == 13) return "-TACHO TIME-";
-        if(h == 14 && m > 30 && m < 50) return "-HUGO'S WC BREAK 2-";
-        if(h == 17 && m > 30 && m < 50) return "-HUGO'S WC BREAK 3-";
         if(h == 18 && m > 20 && m < 31) return "-HOME O'CLOCK-";
         return null;
       },
@@ -122,22 +119,38 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "Mornig blues",
             "First come, first serve!"
           ];
-        } else if((h < 13 || (h >= 14 && h <= 17)) && prob < 40) {
-          // work hour - 40% chance of personal messages
+        } else if((h < 13 || (h >= 14 && h <= 17)) && prob < 20) {
+          // work hours - 20% chance of personal messages (add your own!)
           randomMessages = [
-            "Zé, stop watching LoL.",
-            "Vasco, do you hate computers?",
-            "Tiago, is the new UI ready? - Next week",
-            "Hugo, when was your last commit?",
-            "Work, bitches!",
             "Sucks to be you right now.",
             "You should see your faces reading this.",
-            "Vasco, Cristina & Rui are getting a divorce...",
-            "Tiago: oh cod!"
+            "It's a PAIN!!!!",
+            "Weird math, baby!",
+            "Ensemble learning is not the future, it's the present!"
           ];
         } else if((h < 13 || (h >= 14 && h <= 17)) && prob < 80) {
           // work hours - 40% chance of a programming joke!
           randomMessages = [
+            "20. That's weird....",
+            "19. It's never done that before.",
+            "18. It worked yesterday.",
+            "17. How is that possible?",
+            "16. It must be a hardware problem.",
+            "15. What did you type in wrong to get it to crash?",
+            "14. There is something funky in your data. OR It's a data problem, not a program problem.",
+            "13. I haven't touched that module in weeks!",
+            "12. You must have the wrong version.",
+            "11. It's just some unlucky coincidence.",
+            "10. I can't test everything!",
+            "9. THIS can't be the source of THAT.",
+            "8. It works, but it hasn't been tested.",
+            "7. Somebody must have changed my code.",
+            "6. Did you check for a virus on your system?",
+            "5. Even though it doesn't work, how does it feel?",
+            "4. You can't use that version on your system.",
+            "3. Why do you want to do it that way?",
+            "2. Where were you when the program blew up?",
+            "1. \"It works on my machine..\"",
             "Computers make very fast, very accurate mistakes.",
             "CAPS LOCK – Preventing Login Since 1980.",
             "Artificial intelligence usually beats real stupidity.",
@@ -156,7 +169,6 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "I came, I saw, I deleted all your files.",
             "Warning, keyboard not found. Press Enter to continue.",
             "A SQL query walks up to two tables and asks, \"Can I join you?\"",
-            "NOT ARBITRARILY COMPLEX ENOUGH!",
             "Welcome to the dark site of the internet",
             "Howto be hated in the internet: 1. Express an opinion. 2. Wait.",
             "#hashtag",
@@ -170,7 +182,7 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "Mouse pointless is a real condition!",
             "Google glasses: About 99,500,000 results",
             "All programmers are playwrights and all computers are lousy actors.",
-            "[\"hip\",\"hip\"](Hip hip array!)",
+            "[\"hip\",\"hip\"] (Hip hip array!)",
             "Profanity is the most common language used in programming",
             "//No comment",
             "/* No comments */",
@@ -189,11 +201,8 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
           randomMessages = [
             "Time to stop!",
             "Are you doing extra time today?",
-            "Is ME01 crashing again?",
-            "Seriously, tell Thomas you have to go!"
+            "Is ME01 crashing again?"
           ];
-        } else if(h == 19) {
-            randomMessages = ["Playing games at work, are we?"];
         } else if(h >= 20) {
             randomMessages = [
             "Go home. Seriously.", 
@@ -202,9 +211,7 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
           ];
         } else {
           randomMessages = [
-            "That's what SHE said!",
             "God must love stupid people. He made SO many.",
-            "Good girls are bad girls that never get caught.",
             "If God is watching us, the least we can do is be entertaining.",
             "I could agree with you, but then we'd be both wrong",
             "Laugh at your problems, everybody else does.",
@@ -214,11 +221,8 @@ Dashboard.MeterSource = Dashboard.PeriodicSource.extend({
             "Never hit a man with glasses. Use a baseball bat.",
             "Life’s a bitch, ’cause if it was a slut, it’d be easy.",
             "Why didn’t Noah swat those two mosquitoes?",
-            "Without nipples, breasts would be pointless.",
             "No one is listening until you fart.",
             "What has four legs and an arm? A happy pit bull.",
-            "Constipated people don’t give a crap.",
-            "Why is a bra singular and panties plural?",
             "I’d kill for a Nobel Peace Prize.",
             "I bet you I could stop gambling.",
             "Sex on TV can’t hurt unless you fall off.",

@@ -20,6 +20,7 @@ Dashboard.RssWidget = Dashboard.FlippableWidget.extend({
   classNames: ['widget', 'widget-rss'],
 
   rotatePeriod: 10000,
+  feedsPerPage: 2,
 
   maxItems: 1,
   nextItemIdx: 0,
@@ -36,11 +37,16 @@ Dashboard.RssWidget = Dashboard.FlippableWidget.extend({
     if (allData.length == 0)
       return null;
 
+    var perPage = this.get('feedsPerPage');
     var toShow = this.get('nextItemIdx');
     if (toShow >= allData.length) toShow = 0;
-    this.set('nextItemIdx', (toShow + 1) % allData.length);
+    this.set('nextItemIdx', (toShow + perPage) % allData.length);
 
-    return allData[toShow];
+    var data = [];
+    for(var i = 0; i < perPage; i++) {
+      data.push(allData[toShow + i]);
+    }
+    return data;
   },
 
   rotateItem: function() {
